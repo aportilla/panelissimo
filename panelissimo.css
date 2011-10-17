@@ -1,0 +1,36 @@
+html,body {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.panelissimo-enabled {
+    overflow: hidden;
+}
+
+.panelissimo-enabled .panelissimo-col,
+.panelissimo-enabled .panelissimo-row {
+    position: absolute;
+    display: block;
+    overflow: auto;
+    background: -webkit-linear-gradient(
+        135deg, white, blue
+    );
+    
+    background: -moz-linear-gradient(
+        135deg, white, blue
+    );
+}
+
+.panelissimo-enabled .panelissimo-col {
+    height: 100%;
+}
+
+.panelissimo-enabled .panelissimo-row {
+    width: 100%;
+}

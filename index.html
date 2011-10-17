@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>     
+        <title>Panelissimo</title>  
+    	<script type="text/javascript" src="../jquery/jquery-1.6.4.js"></script>
+    	<script type="text/javascript" src="panelissimo.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen"  href="panelissimo.css" />
+    </head>
+     
+    <body>
+        
+        <div id="header" class="panelissimo">header</div>
+        <div id="content" class="panelissimo">
+            <div id="sidebar" class="panelissimo">Sidebar</div>
+            <div id="page" class="panelissimo">
+                <div id="pageActions" class="panelissimo">page actions</div>
+                <div id="pageBody" class="panelissimo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div id="pageFoot" class="panelissimo">page foot</div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            var blah = new Panelissimo({
+                root : document.body,
+                minWidth : 400,
+                minHeight : 0,
+                elements : {
+                    'header'        : { scale: 'fixed'  ,size:  50  },
+                    'content'       : { scale: 'auto'               },
+                    'sidebar'       : { scale: 'fixed'  ,size: 200  },
+                    'page'          : { scale: 'auto'               },
+                    'pageActions'   : { scale: 'fixed'  ,size:  40  },
+                    'pageBody'      : { scale: 'auto'               },
+                    'pageFoot'      : { scale: 'fixed'  ,size:  40  }
+                }
+            });
+             
+        </script>
+    </body>
+    
+</html>
