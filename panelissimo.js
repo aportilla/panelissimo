@@ -169,7 +169,6 @@
         return {
             getCell : Grid.getCell
         };
-        
     };
 
 }).call(this);
