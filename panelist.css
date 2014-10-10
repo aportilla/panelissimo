@@ -9,28 +9,26 @@ html,body {
     height: 100%;
 }
 
-.panelissimo-enabled {
+.panelist-enabled {
     overflow: hidden;
 }
 
-.panelissimo-enabled .panelissimo-col,
-.panelissimo-enabled .panelissimo-row {
-    position: absolute;
-    display: block;
-    overflow: auto;
+.panelist-enabled .panelist-col,
+.panelist-enabled .panelist-row {
     background: -webkit-linear-gradient(
         135deg, white, blue
     );
-    
+
     background: -moz-linear-gradient(
         135deg, white, blue
     );
 }
 
-.panelissimo-enabled .panelissimo-col {
+/*
+.panelist-enabled .panelist-col {
     height: 100%;
 }
 
-.panelissimo-enabled .panelissimo-row {
+.panelist-enabled .panelist-row {
     width: 100%;
-}
+}*/
