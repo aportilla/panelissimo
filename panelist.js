@@ -4,8 +4,15 @@
   var dotClassName = '.' + className;
   var dataKeyBase = 'data-' + className;
   var dataKeySize = dataKeyBase + '-size';
-  var dataKeyMin = dataKeyBase + '-min';
-  var dataKeyMax = dataKeyBase + '-max';
+  var colSuffix = '-col';
+  var rowSufix = '-row';
+  var defaultCellStyles = {
+      position: 'absolute',
+      display: 'block',
+      overflow: 'auto',
+      width : '100%',
+      height : '100%',
+    };
 
   function getKindFromSizeValue (size) {
     return size.indexOf('px') > 0 ? 'fixed' :
@@ -43,26 +50,15 @@
 
     var subCells = [],
       $el = $(element),
-      isColumn = (depth%2 == 0),
-      // size = element.getAttribute(dataKeySize),
+      isColumn = (depth%2 === 0),
       size = getSizeConfig(element.getAttribute(dataKeySize)),
-      min = getSizeConfig(element.getAttribute(dataKeyMin)),
-      max = getSizeConfig(element.getAttribute(dataKeyMax)),
-      // kind = getKindFromSizeValue(size),
-      // sizeNumber = getNumberFromSizeAndKind(size,kind),
       pixelSize = 0,
       parentPixelSize = 0,
       position = 0;
 
-    $el.css({
-      position: 'absolute',
-      display: 'block',
-      overflow: 'auto',
-      width : '100%',
-      height : '100%',
-    });
+    $el.css(defaultCellStyles);
 
-    $el.addClass(className + (isColumn ? '-col' : '-row'));
+    $el.addClass(className + (isColumn ? colSuffix : rowSufix));
 
     $el.children().each(function(index,childEl){
       if(childEl.getAttribute(dataKeySize)){
@@ -74,8 +70,6 @@
       getSizeKind     : function(){ return size.kind; },
       getSizeNumber   : function(){ return size.number; },
       getSize : function(){ return size; },
-      getMax : function(){ return max; },
-      getMin : function(){ return min; },
       getPixelSize    : function(){ return pixelSize; },
       setPosition     : function(px){ position = px; },
       setParentPixelSize : function(px){ parentPixelSize = px; },
